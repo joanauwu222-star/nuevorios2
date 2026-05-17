@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Briconsejos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1b5e20;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            border-left: 5px solid #4caf50;
+            border-right: 5px solid #4caf50;
+            display: inline-block;
+            width: auto;
+            padding: 0 30px;
+            letter-spacing: 2px;
+        }
+
+        .title-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #388e3c;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .intro {
+            background: #f1f8e9;
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .intro p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .consejos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .consejo-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .consejo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .consejo-imagen {
+            width: 100%;
+            height: 220px;
+            background: #dcedc8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .consejo-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .consejo-card:hover .consejo-imagen img {
+            transform: scale(1.05);
+        }
+
+        .sin-imagen {
+            background: #c8e6c9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #2e7d32;
+            height: 100%;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .consejo-info {
+            padding: 20px;
+        }
+
+        .consejo-info h3 {
+            color: #1b5e20;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            border-left: 4px solid #4caf50;
+            padding-left: 12px;
+        }
+
+        .consejo-descripcion {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .consejo-detalle {
+            background: #f1f8e9;
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+
+        .consejo-detalle p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .consejo-detalle p:last-child {
+            margin-bottom: 0;
+        }
+
+        .consejo-detalle strong {
+            color: #2e7d32;
+        }
+
+        .tips-extra {
+            background: #fff3e0;
+            padding: 25px;
+            border-radius: 20px;
+            margin-top: 20px;
+            border-left: 5px solid #ff9800;
+        }
+
+        .tips-extra h3 {
+            color: #e65100;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .tips-extra ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tips-extra li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+        }
+
+        .tips-extra li:before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            color: #ff9800;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .consejos-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-container">
+            <h1>Briconsejos de Jardinería</h1>
+        </div>
+        <div class="subtitle">
+            Consejos para cuidar tus plantas y mantener tu jardín saludable y bonito
+        </div>
+
+        <div class="intro">
+            <p>
+                La jardinería es un arte que requiere paciencia, dedicación y conocimiento. 
+                Aquí encontrarás consejos útiles y prácticos para mantener tus plantas sanas, 
+                hermosas y llenas de vida. ¡Pon en práctica estos briconsejos y verás la diferencia!
+            </p>
+        </div>
+
+        <div class="consejos-grid">
+            
+            <div class="consejo-card">
+                <div class="consejo-imagen">
+                    <img src="/Martin Chable Jenifer Joana/Index Files/Evidencias Tareas/Mis tareas/Invernadero/Mi primera página web_files/imagenes/riego.png" alt="Riego adecuado" onerror="this.parentElement.innerHTML='<div class=\'sin-imagen\'>Imagen: Riego adecuado</div>'">
+                </div>
+                <div class="consejo-info">
+                    <h3>Riego adecuado</h3>
+                    <p class="consejo-descripcion">
+                        El agua es esencial para las plantas, pero un exceso o falta puede ser perjudicial. 
+                        Aprende a regar correctamente según cada especie.
+                    </p>
+                    <div class="consejo-detalle">
+                        <p><strong>Consejo:</strong> Riega tus plantas temprano en la mañana o al atardecer para evitar la evaporación rápida del agua.</p>
+                        <p><strong>Dato:</strong> Introduce un dedo en la tierra; si está seca a 2-3 cm de profundidad, necesita agua.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="consejo-card">
+                <div class="consejo-imagen">
+                    <img src="/Martin Chable Jenifer Joana/Index Files/Evidencias Tareas/Mis tareas/Invernadero/Mi primera página web_files/imagenes/luz.png" alt="Luz solar" onerror="this.parentElement.innerHTML='<div class=\'sin-imagen\'>Imagen: Luz solar</div>'">
+                </div>
+                <div class="consejo-info">
+                    <h3>Luz solar necesaria</h3>
+                    <p class="consejo-descripcion">
+                        Cada planta tiene necesidades específicas de luz. Colocarlas en el lugar correcto 
+                        es clave para su desarrollo.
+                    </p>
+                    <div class="consejo-detalle">
+                        <p><strong>Consejo:</strong> Investiga cuántas horas de luz necesita cada especie y ubícala en el lugar adecuado.</p>
+                        <p><strong>Dato:</strong> Las plantas de interior suelen necesitar luz indirecta, mientras que las de exterior requieren sol directo.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="consejo-card">
+                <div class="consejo-imagen">
+                    <img src="/Martin Chable Jenifer Joana/Index Files/Evidencias Tareas/Mis tareas/Invernadero/Mi primera página web_files/imagenes/abono.png" alt="Abono natural" onerror="this.parentElement.innerHTML='<div class=\'sin-imagen\'>Imagen: Abono natural</div>'">
+                </div>
+                <div class="consejo-info">
+                    <h3>Abono natural</h3>
+                    <p class="consejo-descripcion">
+                        Nutre tus plantas de forma ecológica y económica con abonos caseros 
+                        que puedes preparar tú mismo.
+                    </p>
+                    <div class="consejo-detalle">
+                        <p><strong>Consejo:</strong> Prepara compost con restos de frutas, verduras y cáscaras de huevo.</p>
+                        <p><strong>Dato:</strong> El agua de cocción de verduras (fría) es un excelente fertilizante líquido.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="consejo-card">
+                <div class="consejo-imagen">
+                    <img src="/Martin Chable Jenifer Joana/Index Files/Evidencias Tareas/Mis tareas/Invernadero/Mi primera página web_files/imagenes/podas.png" alt="Poda regular" onerror="this.parentElement.innerHTML='<div class=\'sin-imagen\'>Imagen: Poda regular</div>'">
+                </div>
+                <div class="consejo-info">
+                    <h3>Poda regular</h3>
+                    <p class="consejo-descripcion">
+                        La poda ayuda a que tus plantas crezcan más fuertes y saludables, 
+                        eliminando partes dañadas o enfermas.
+                    </p>
+                    <div class="consejo-detalle">
+                        <p><strong>Consejo:</strong> Usa tijeras limpias y afiladas para hacer cortes limpios y precisos.</p>
+                        <p><strong>Dato:</strong> La mejor época para podar es a finales del invierno o principios de primavera.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="consejo-card">
+                <div class="consejo-imagen">
+                    <img src="/Martin Chable Jenifer Joana/Index Files/Evidencias Tareas/Mis tareas/Invernadero/Mi primera página web_files/imagenes/plagas.png" alt="Control de plagas" onerror="this.parentElement.innerHTML='<div class=\'sin-imagen\'>Imagen: Control de plagas</div>'">
+                </div>
+                <div class="consejo-info">
+                    <h3>Control de plagas</h3>
+                    <p class="consejo-descripcion">
+                        Prevén y combate las plagas de forma natural sin dañar a tus plantas 
+                        ni al medio ambiente.
+                    </p>
+                    <div class="consejo-detalle">
+                        <p><strong>Consejo:</strong> Usa jabón potásico o aceite de neem para combatir pulgones y cochinillas.</p>
+                        <p><strong>Dato:</strong> Las mariquitas son aliadas naturales que se comen los pulgones.</p>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="consejo-card">
+                <div class="consejo-imagen">
+                    <img src="/Martin Chable Jenifer Joana/Index Files/Evidencias Tareas/Mis tareas/Invernadero/Mi primera página web_files/imagenes/trasplante.png" alt="Trasplante" onerror="this.parentElement.innerHTML='<div class=\'sin-imagen\'>Imagen: Trasplante</div>'">
+                </div>
+                <div class="consejo-info">
+                    <h3>Trasplante correcto</h3>
+                    <p class="consejo-descripcion">
+                        Cambiar de maceta o ubicación puede estresar a la planta si no se hace 
+                        correctamente. Sigue estos consejos.
+                    </p>
+                    <div class="consejo-detalle">
+                        <p><strong>Consejo:</strong> Trasplanta en primavera usando una maceta ligeramente más grande.</p>
+                        <p><strong>Dato:</strong> Añade piedras en el fondo de la maceta para mejorar el drenaje.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+</body>
+</html>

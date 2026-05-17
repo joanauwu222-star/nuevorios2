@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', 'Inter', system-ui, 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(145deg, #eef5ff 0%, #d4e3fd 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+    margin: 0;
+}
+
+.form-card {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(2px);
+    max-width: 620px;
+    width: 100%;
+    border-radius: 2rem;
+    box-shadow: 0 25px 40px -12px rgba(0, 55, 70, 0.4);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #b7dfe8;
+}
+
+.form-header {
+    background: linear-gradient(135deg, #0a4c5c 0%, #0e6b7c 100%);
+    padding: 1.6rem 2rem;
+    color: white;
+}
+
+.form-header h2 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: -0.3px;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.form-header h2::before {
+    content: "";
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+.form-header p {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    margin-top: 6px;
+    font-weight: 400;
+}
+
+.form-body {
+    padding: 2rem 2rem 1.8rem;
+}
+
+.input-group {
+    margin-bottom: 1.4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #0a4c5c;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.input-group label i {
+    font-style: normal;
+    font-weight: 700;
+    color: #0e6b7c;
+}
+
+.input-group input {
+    padding: 0.85rem 1rem;
+    border: 2px solid #cae3f0;
+    border-radius: 1.2rem;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    background-color: #fefefe;
+    outline: none;
+    color: #0a2e38;
+    font-weight: 500;
+}
+
+.input-group input:focus {
+    border-color: #0e6b7c;
+    box-shadow: 0 0 0 4px rgba(14, 107, 124, 0.2);
+    background-color: #ffffff;
+}
+
+.input-group input::placeholder {
+    color: #b0cfda;
+    font-weight: 400;
+}
+
+.double-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.double-row .input-group {
+    flex: 1;
+    min-width: 140px;
+}
+
+.btn-submit {
+    background: linear-gradient(95deg, #0e6b7c, #0a4c5c);
+    border: none;
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 3rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 0.8rem;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 14px rgba(10, 76, 92, 0.3);
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(95deg, #128096, #0c5f6e);
+    box-shadow: 0 12px 20px rgba(10, 76, 92, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(1px);
+}
+
+.message-overlay {
+    background: #ffffffea;
+    backdrop-filter: blur(12px);
+    border-radius: 2rem;
+    padding: 2rem;
+    text-align: center;
+    animation: fadeSlideUp 0.4s ease-out;
+    border: 1px solid #8cd9e8;
+    box-shadow: 0 20px 35px -12px #0a4c5c40;
+}
+
+.message-overlay h3 {
+    color: #0a4c5c;
+    font-size: 1.9rem;
+    margin-bottom: 0.8rem;
+}
+
+.message-overlay p {
+    color: #146b7c;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.check-icon {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-content {
+    transition: 0.2s;
+}
+
+.hidden-form {
+    display: none;
+}
+
+.visible-message {
+    display: block;
+}
+
+.form-footer {
+    padding: 0.8rem 2rem 1.5rem;
+    text-align: right;
+    font-size: 0.7rem;
+    color: #0a6a7c;
+    border-top: 1px solid #cae3f0;
+    background: #f0fafd70;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.watermark {
+    font-weight: 500;
+}
+
+@media (max-width: 550px) {
+    .form-body {
+        padding: 1.5rem;
+    }
+    .double-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    .form-header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+.input-group input.error-field {
+    border-color: #e68a8a;
+    background-color: #fff5f5;
+}

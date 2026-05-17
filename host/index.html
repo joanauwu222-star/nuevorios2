@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CRUD demo js - Perros</title>
+        <link rel="stylesheet" href="estilos.css">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            /* Fluorescente azul bajito */
+            .form-control {
+                border: 1px solid #b3e0f5;
+                transition: all 0.2s ease;
+            }
+            .form-control:focus {
+                border-color: #4fc3f7;
+                box-shadow: 0 0 12px #4fc3f7, inset 0 1px 1px rgba(0,0,0,0.075);
+                outline: 0;
+            }
+            .btn-success {
+                background-color: #29b6f6;
+                border-color: #0288d1;
+                transition: all 0.2s ease;
+                box-shadow: 0 0 6px #4fc3f7;
+            }
+            .btn-success:hover {
+                background-color: #03a9f4;
+                border-color: #0277bd;
+                box-shadow: 0 0 14px #4fc3f7;
+                transform: scale(1.02);
+            }
+            .glyphicon-pencil, .glyphicon-trash {
+                text-shadow: 0 0 5px #4fc3f7;
+            }
+            .badge {
+                background-color: #29b6f6;
+                box-shadow: 0 0 8px #4fc3f7;
+            }
+            .jumbotron {
+                background: rgba(255, 248, 250, 0.95);
+                backdrop-filter: blur(4px);
+            }
+            .modo {
+                font-weight: bold;
+                color: #0288d1;
+                text-shadow: 0 0 3px #4fc3f7;
+            }
+
+            /* ALINEACIÓN PERFECTA DE LA IMAGEN CON EL FORMULARIO */
+            .fila-formulario-imagen {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .col-formulario {
+                display: flex;
+                flex-direction: column;
+            }
+            .contenedor-imagen {
+                height: 100%;
+                display: flex;
+                align-items: stretch;
+            }
+            .imagen-perro {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 20px;
+                box-shadow: 0 0 15px #4fc3f7, 0 4px 12px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+                border: 2px solid rgba(79, 195, 247, 0.5);
+            }
+            .imagen-perro:hover {
+                transform: scale(1.01);
+                box-shadow: 0 0 25px #4fc3f7;
+                border-color: #4fc3f7;
+            }
+            /* Para que el formulario ocupe toda la altura */
+            #perros-form {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+            }
+            /* Ajuste en móviles */
+            @media (max-width: 992px) {
+                .contenedor-imagen {
+                    margin-top: 30px;
+                    height: 400px;
+                }
+            }
+        </style>
+    </head>
+
+    <body class="container">
+        <div class="mensaje-alerta">
+        </div>
+
+        <div class="jumbotron">
+            <h2> Finca Secbi <small>Gestión de perros</small></h2>
+
+            <div class="row fila-formulario-imagen">
+                <!-- COLUMNA DEL FORMULARIO -->
+                <div class="col-md-6 col-formulario">
+                    <hr>
+                    <p class="modo">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Agregar perro
+                    </p>
+
+                    <form id="perros-form">
+                        <input class="form-control" type="text" id="nombre" placeholder="Nombre del perro">
+                        <input class="form-control" type="text" id="dueno" placeholder="Nombre del dueño">
+                        <input class="form-control" type="number" id="peso" placeholder="Peso en kg">
+                        <input class="form-control" type="date" id="fecha_nacimiento" placeholder="Fecha de nacimiento">
+                        <select class="form-control" id="sexo">
+                            <option value="">Seleccione el sexo</option>
+                            <option value="Hembra">Hembra</option>
+                            <option value="Macho">Macho</option>
+                        </select>
+                        <input class="form-control" type="text" id="raza" placeholder="Raza del perro">
+                        <input class="form-control" type="number" id="edad" placeholder="Edad en años">
+                        <input class="form-control" type="text" id="color" placeholder="Color del perro">
+                        <br>
+                        <input type="submit" class="btn btn-success" value="Guardar">
+                    </form>
+
+                    <br>
+                    <div id="numeroPerros"></div>
+                </div>
+
+                <!-- COLUMNA DE LA IMAGEN - ALINEADA DESDE NOMBRE HASTA COLOR -->
+                <div class="col-md-6">
+                    <div class="contenedor-imagen">
+                        <img class="imagen-perro" 
+                             src="https://www.eukanuba.com/cdn-cgi/image/height=617,f=auto,quality=90/arg/sites/g/files/fnmzdf6531/files/2024-11/uploaded_image_49146bdd-130f-434d-ad12-47758b6968fd.jpg" 
+                             alt="Perro feliz" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        <table class="table" id="dbPerros-list">
+        </table>
+    </body>
+
+    <script type="text/javascript" src="funciones.js"></script>
+</html>

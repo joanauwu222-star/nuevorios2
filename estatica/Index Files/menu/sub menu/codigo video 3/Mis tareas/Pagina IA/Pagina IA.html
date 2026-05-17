@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amantes de los Perritos | Web Oficial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <h1>Amantes de los Perritos</h1>
+        </div>
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav-menu" id="navMenu">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#razas">Razas</a></li>
+                <li><a href="#cuidados">Cuidados</a></li>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h2>El mejor amigo del hombre merece lo mejor</h2>
+                <p>Amor, cuidado y felicidad para tu compañero fiel</p>
+                <button class="btn-hero" id="exploreBtn">Explorar más</button>
+            </div>
+        </section>
+
+        <section id="razas" class="razas">
+            <div class="container">
+                <h2>Razas populares</h2>
+                <div class="cards-container">
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Labrador Retriever">
+                        <h3>Labrador Retriever</h3>
+                        <p>Amigable, enérgico y leal. Ideal para familias activas.</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Bulldog Francés">
+                        <h3>Bulldog Francés</h3>
+                        <p>Cariñoso, juguetón y perfecto para departamentos.</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Pastor Alemán">
+                        <h3>Pastor Alemán</h3>
+                        <p>Inteligente, protector y muy leal a su familia.</p>
+                    </div>
+                    <div class="card">
+                        <img src="https://images.pexels.com/photos/257540/pexels-photo-257540.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Golden Retriever">
+                        <h3>Golden Retriever</h3>
+                        <p>Dócil, paciente y excelente con niños.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cuidados" class="cuidados">
+            <div class="container">
+                <h2>Cuidados esenciales</h2>
+                <div class="cuidados-grid">
+                    <div class="cuidado-card">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Alimentación</h3>
+                        <p>Proporciona comida balanceada y agua fresca siempre.</p>
+                    </div>
+                    <div class="cuidado-card">
+                        <i class="fas fa-dumbbell"></i>
+                        <h3>Ejercicio</h3>
+                        <p>Paseos diarios y juegos para mantenerlo activo y feliz.</p>
+                    </div>
+                    <div class="cuidado-card">
+                        <i class="fas fa-shower"></i>
+                        <h3>Higiene</h3>
+                        <p>Baños regulares, cepillado y cuidado dental.</p>
+                    </div>
+                    <div class="cuidado-card">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Salud</h3>
+                        <p>Visitas al veterinario y vacunas al día.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="galeria" class="galeria">
+            <div class="container">
+                <h2>Galería de perritos</h2>
+                <div class="galeria-grid">
+                    <div class="galeria-item">
+                        <img src="https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Perro feliz">
+                    </div>
+                    <div class="galeria-item">
+                        <img src="https://images.pexels.com/photos/4587995/pexels-photo-4587995.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cachorro jugando">
+                    </div>
+                    <div class="galeria-item">
+                        <img src="https://images.pexels.com/photos/3361739/pexels-photo-3361739.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Perro en el parque">
+                    </div>
+                    <div class="galeria-item">
+                        <img src="https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Perro descansando">
+                    </div>
+                    <div class="galeria-item">
+                        <img src="https://images.pexels.com/photos/731906/pexels-photo-731906.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Perro con gafas">
+                    </div>
+                    <div class="galeria-item">
+                        <img src="https://images.pexels.com/photos/2883062/pexels-photo-2883062.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Perro y niño">
+                    </div>
+                </div>
+            </div>
+            <div id="lightbox" class="lightbox">
+                <span class="close">&times;</span>
+                <img class="lightbox-img" id="lightboxImg">
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto">
+            <div class="container">
+                <h2>Contáctanos</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar mensaje</button>
+                    <p id="formMessage" class="form-message"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Amantes de los Perritos</h3>
+                <p>Tu lugar favorito para todo sobre perros.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#razas">Razas</a></li>
+                    <li><a href="#cuidados">Cuidados</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Síguenos</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>2026 Amantes de los Perritos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

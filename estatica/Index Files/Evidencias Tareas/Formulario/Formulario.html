@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="form-card" id="formCard">
+    <div class="form-header">
+        <h2>Registro de Nuevo Usuario</h2>
+        <p>Completa los datos solicitados, todos los campos son obligatorios.</p>
+    </div>
+
+    <div id="dynamicContainer">
+      
+        <div id="formContainer" class="form-content">
+            <div class="form-body">
+             
+                <div class="input-group">
+                    <label><i></i> Usuario:</label>
+                    <input type="text" id="usuario" placeholder="ej: marino_aqua" autocomplete="off">
+                </div>
+
+                <div class="input-group">
+                    <label><i></i> Contraseña:</label>
+                    <input type="password" id="contrasena" placeholder="Mínimo 4 caracteres">
+                </div>
+
+                <div class="input-group">
+                    <label><i></i> E-mail:</label>
+                    <input type="email" id="email" placeholder="usuario@ejemplo.com">
+                </div>
+
+                <div class="double-row">
+                    <div class="input-group">
+                        <label><i></i> Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Nombre">
+                    </div>
+                    <div class="input-group">
+                        <label><i></i> Apellidos:</label>
+                        <input type="text" id="apellidos" placeholder="Apellidos completos">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label><i></i> Dirección:</label>
+                    <input type="text" id="direccion" placeholder="Calle, ciudad, código postal">
+                </div>
+
+                <button class="btn-submit" id="btnAceptar">Aceptar</button>
+            </div>
+            <div class="form-footer">
+                <span class="watermark"> Datos seguros</span>
+                <span>Todos los campos requeridos</span>
+            </div>
+        </div>
+
+        <div id="successMessage" style="display: none;" class="form-content message-overlay">
+            <div class="check-icon"></div>
+            <h3>¡Proceso completado!</h3>
+            <p>El usuario ha sido registrado exitosamente</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color:#0e6b7c;">Redirigiendo al formulario en <span id="countdownTimer">5</span> segundos...</p>
+            <div style="margin-top: 1.5rem;">
+                <div style="width: 50px; height: 4px; background: #8cd9e8; border-radius: 4px; margin: 0 auto; animation: pulseWidth 5s linear forwards;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

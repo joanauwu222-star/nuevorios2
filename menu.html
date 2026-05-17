@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', 'Arial', system-ui, sans-serif;
+}
+
+body{
+    background: #fff0f5;
+}
+
+header{
+    width:100%;
+    background: rgba(255, 235, 242, 0.92);
+    backdrop-filter: blur(8px);
+    padding: 20px 0;
+    box-shadow: 0 4px 15px rgba(180, 100, 120, 0.1);
+    border-bottom: 1px solid rgba(255, 180, 200, 0.5);
+}
+
+.menu{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.menu a{
+    text-decoration: none;
+    color: #ff4fd8;
+    background: rgba(255, 245, 250, 0.9);
+    padding: 12px 24px;
+    border-radius: 40px;
+    font-size: 14.5px;
+    font-weight: 500;
+    transition: 0.25s ease;
+    white-space: nowrap;
+    box-shadow: 0 0 8px #ff4fd8, 0 2px 8px rgba(170, 85, 110, 0.1);
+    border: 1px solid rgba(255, 190, 210, 0.6);
+    letter-spacing: 0.3px;
+}
+
+.menu a:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(90deg, #ff00cc, #ff4fd8);
+    color: white;
+    box-shadow: 0 0 15px #ff00cc, 0 0 25px #ff4fd8;
+    border-color: #ff4fd8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <nav class="menu">
+
+        <a href="contenido.html" target="contenido">INICIO</a>
+        <a href="pagina1/index.html" target="contenido">PÁGINA 1</a>
+        <a href="pagina2/index.html" target="contenido">PÁGINA 2</a>
+        <a href="pagina3/pagina3.html" target="contenido">PÁGINA 3</a>
+        <a href="pagina4/pagina4.html" target="contenido">PÁGINA 4</a>
+        <a href="host/index.html" target="contenido">Host local</a>
+        <a href="estatica/Index.html" target="contenido">Página estática</a>
+        <a href="curriculum/index.html" target="contenido">curriculum</a>
+
+    </nav>
+
+</header>
+
+</body>
+</html>

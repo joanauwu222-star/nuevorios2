@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+			crossorigin="anonymous"
+		/>
+		<title>Movil | Welcome</title>
+		<style>
+			.card {
+				transition: transform 0.3s;
+			}
+			.card:hover {
+				transform: translateY(-5px);
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Header - usando SUCCESS (verde) -->
+		<header id="header" class="vh-100 text-bg-success">
+			<nav class="navbar navbar-expand-md bg-success">
+				<div class="container">
+					<a href="#" class="navbar-brand fs-2 text-white">movil</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item">
+								<a href="#header" class="nav-link text-white">Home</a>
+							</li>
+							<li class="nav-item">
+								<a href="#services" class="nav-link text-white">Services</a>
+							</li>
+							<li class="nav-item">
+								<a href="#features" class="nav-link text-white">Features</a>
+							</li>
+							<li class="nav-item">
+								<!-- Download button - usando DANGER -->
+								<a href="#download" class="btn btn-danger rounded-1">Download</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- Showcase -->
+			<div class="container d-flex flex-column justify-content-center align-items-center text-center h-100">
+				<p class="text-uppercase fs-4">Full responsive website <span class="text-warning">|</span> built with bootstrap 5</p>
+				<h1 class="display-4 mb-4">Movil - Premium App One Page Template</h1>
+				<a href="#download" class="btn btn-outline-danger btn-lg mt-2 text-white border-white">Download</a>
+			</div>
+		</header>
+
+		<!-- Services - FONDO INFO (azul claro) -->
+		<section id="services" class="py-5 bg-info">
+			<div class="container">
+				<div class="text-center">
+					<h2 class="mb-4 text-white">Servicios</h2>
+					<hr class="w-25 mx-auto bg-danger opacity-100" style="height: 3px;" />
+				</div>
+				<div class="row">
+					<!-- Card 1: Fondo WARNING -->
+					<div class="col-md-3 mb-2">
+						<div class="card bg-warning text-white border-0">
+							<div class="card-body">
+								<i class="fa-regular fa-heart fa-2x my-3 text-danger"></i>
+								<h5 class="fw-bold pb-2 text-white">Diseño de amor</h5>
+								<p class="text-white opacity-75">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quod quo facere unde mollitia deserunt event.
+								</p>
+								<a href="#" class="btn btn-danger btn-sm text-uppercase text-white fw-bold">LEER MÁS</a>
+							</div>
+						</div>
+					</div>
+					<!-- Card 2: Fondo PRIMARY -->
+					<div class="col-md-3 mb-2">
+						<div class="card bg-primary text-white border-0">
+							<div class="card-body">
+								<i class="fa-regular fa-eye fa-2x my-3 text-warning"></i>
+								<h5 class="fw-bold pb-2 text-white">Interfaz de usuario limpia</h5>
+								<p class="text-white opacity-75">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quod quo facere unde mollitia deserunt event.
+								</p>
+								<a href="#" class="btn btn-warning btn-sm text-uppercase text-white fw-bold">LEER MÁS</a>
+							</div>
+						</div>
+					</div>
+					<!-- Card 3: Fondo DANGER -->
+					<div class="col-md-3 mb-2">
+						<div class="card bg-danger text-white border-0">
+							<div class="card-body">
+								<i class="fas fa-mobile-screen fa-2x my-3 text-primary"></i>
+								<h5 class="fw-bold pb-2 text-white">Sensible</h5>
+								<p class="text-white opacity-75">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quod quo facere unde mollitia deserunt event.
+								</p>
+								<a href="#" class="btn btn-primary btn-sm text-uppercase text-white fw-bold">LEER MÁS</a>
+							</div>
+						</div>
+					</div>
+					<!-- Card 4: Fondo SUCCESS -->
+					<div class="col-md-3 mb-2">
+						<div class="card bg-success text-white border-0">
+							<div class="card-body">
+								<i class="fa-regular fa-object-group fa-2x my-3 text-info"></i>
+								<h5 class="fw-bold pb-2 text-white">Experiencia de usuario sencilla</h5>
+								<p class="text-white opacity-75">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quod quo facere unde mollitia deserunt event.
+								</p>
+								<a href="#" class="btn btn-info btn-sm text-uppercase text-white fw-bold">LEER MÁS</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features - usando DANGER (rojo) -->
+		<section id="features" class="py-5 bg-danger">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5">
+						<img src="/images/features.jpg" alt="" class="img-fluid rounded-5 border border-4 border-warning" />
+					</div>
+					<div class="col-md-7">
+						<h2 class="my-4 text-center text-white">Learn More About Our <span class="text-warning">Features</span></h2>
+						<ul class="list-unstyled">
+							<li class="d-flex mb-3">
+								<i class="fas fa-check text-warning fa-2x mx-4"></i>
+								<p class="text-white">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolor provident quibusdam debitis,
+									pariatur ducimus voluptatem labore facere?
+								</p>
+							</li>
+							<li class="d-flex mb-3">
+								<i class="fas fa-check text-success fa-2x mx-4"></i>
+								<p class="text-white">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolor provident quibusdam debitis,
+									pariatur ducimus voluptatem labore facere?
+								</p>
+							</li>
+							<li class="d-flex mb-3">
+								<i class="fas fa-check text-primary fa-2x mx-4"></i>
+								<p class="text-white">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolor provident quibusdam debitis,
+									pariatur ducimus voluptatem labore facere?
+								</p>
+							</li>
+							<li class="d-flex mb-3">
+								<i class="fas fa-check text-info fa-2x mx-4"></i>
+								<p class="text-white">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolor provident quibusdam debitis,
+									pariatur ducimus voluptatem labore facere?
+								</p>
+							</li>
+							<li class="d-flex mb-3">
+								<i class="fas fa-check text-secondary fa-2x mx-4"></i>
+								<p class="text-white">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolor provident quibusdam debitis,
+									pariatur ducimus voluptatem labore facere?
+								</p>
+							</li>
+							<li class="d-flex mb-3">
+								<i class="fas fa-check text-light fa-2x mx-4"></i>
+								<p class="text-white">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolor provident quibusdam debitis,
+									pariatur ducimus voluptatem labore facere?
+								</p>
+							</li>
+							<li class="d-flex mb-3">
+								<i class="fas fa-check text-dark fa-2x mx-4"></i>
+								<p class="text-white">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore dolor provident quibusdam debitis,
+									pariatur ducimus voluptatem labore facere?
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Download - FONDO SECONDARY (gris) -->
+		<section id="download" class="py-5 bg-secondary">
+			<div class="container">
+				<div class="text-center">
+					<h2 class="mb-4 text-white">Descargar</h2>
+					<hr class="w-25 mx-auto mb-4 bg-warning opacity-100" style="height: 3px;" />
+				</div>
+				<div class="row">
+					<div class="col-md-6 offset-lg-3">
+						<p class="text-center text-white">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio beatae fuga harum illum, magnam esse? Illo
+							corporis fugiat, officia nihil mollitia tempore nostrum perspiciatis.
+						</p>
+						<img src="/images/store-app.png" alt="" class="img-fluid d-block mx-auto my-4 border border-4 border-warning rounded-4" />
+						<!-- Botón de descarga -->
+						<div class="text-center">
+							<a href="#" class="btn btn-warning btn-lg px-5 fw-bold">DESCARGAR AHORA</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer - PRIMARY (azul) -->
+		<footer class="mainfooter bg-primary py-4">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<p class="text-center small text-white">
+							Copyright &copy; Móvil 2023 | <span class="text-warning">Todos los derechos reservados</span> | <span class="text-danger">Política de privacidad</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+			crossorigin="anonymous"
+		></script>
+	</body>

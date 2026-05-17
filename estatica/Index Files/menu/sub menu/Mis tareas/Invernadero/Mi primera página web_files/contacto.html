@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1b5e20;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        .title-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #388e3c;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+
+        .formulario-contacto {
+            background: white;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2e7d32;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #c8e6c9;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4caf50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+            background: white;
+        }
+
+        .form-group input:hover,
+        .form-group select:hover,
+        .form-group textarea:hover {
+            border-color: #81c784;
+        }
+
+        .btn-enviar {
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-enviar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .mensaje-confirmacion {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .mensaje-confirmacion.exito {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+
+        .mensaje-confirmacion.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+
+        @media (max-width: 550px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-container">
+            <h1>Contacto</h1>
+        </div>
+
+        <div class="formulario-contacto">
+            <form id="contactoForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Opcional">
+                </div>
+
+                <div class="form-group">
+                    <label for="asunto">Asunto</label>
+                    <select id="asunto" name="asunto" required>
+                        <option value="">Selecciona un asunto</option>
+                        <option value="consulta">Consulta general</option>
+                        <option value="plantas">Dudas sobre plantas</option>
+                        <option value="cuidados">Consejos de cuidados</option>
+                        <option value="taller">Talleres y cursos</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-enviar">Enviar mensaje</button>
+                
+                <div id="mensajeConfirmacion" class="mensaje-confirmacion"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('contactoForm');
+        const mensajeDiv = document.getElementById('mensajeConfirmacion');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const nombre = document.getElementById('nombre');
+            const email = document.getElementById('email');
+            const asunto = document.getElementById('asunto');
+            const mensaje = document.getElementById('mensaje');
+            
+            let isValid = true;
+            let errorMessage = '';
+            
+            if (!nombre.value.trim()) {
+                isValid = false;
+                nombre.style.borderColor = '#e74c3c';
+                errorMessage = 'Por favor ingresa tu nombre. ';
+            } else {
+                nombre.style.borderColor = '#c8e6c9';
+            }
+            
+            if (!email.value.trim()) {
+                isValid = false;
+                email.style.borderColor = '#e74c3c';
+                errorMessage += 'Por favor ingresa tu correo electrónico. ';
+            } else {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailPattern.test(email.value)) {
+                    isValid = false;
+                    email.style.borderColor = '#e74c3c';
+                    errorMessage += 'Ingresa un correo electrónico válido. ';
+                } else {
+                    email.style.borderColor = '#c8e6c9';
+                }
+            }
+            
+            if (!asunto.value) {
+                isValid = false;
+                asunto.style.borderColor = '#e74c3c';
+                errorMessage += 'Por favor selecciona un asunto. ';
+            } else {
+                asunto.style.borderColor = '#c8e6c9';
+            }
+            
+            if (!mensaje.value.trim()) {
+                isValid = false;
+                mensaje.style.borderColor = '#e74c3c';
+                errorMessage += 'Por favor escribe tu mensaje.';
+            } else {
+                mensaje.style.borderColor = '#c8e6c9';
+            }
+            
+            if (isValid) {
+                mensajeDiv.className = 'mensaje-confirmacion exito';
+                mensajeDiv.textContent = 'Mensaje enviado con éxito. Te responderemos pronto.';
+                form.reset();
+                
+                setTimeout(function() {
+                    mensajeDiv.style.display = 'none';
+                    mensajeDiv.className = 'mensaje-confirmacion';
+                }, 4000);
+            } else {
+                mensajeDiv.className = 'mensaje-confirmacion error';
+                mensajeDiv.textContent = errorMessage;
+                
+                setTimeout(function() {
+                    mensajeDiv.style.display = 'none';
+                    mensajeDiv.className = 'mensaje-confirmacion';
+                }, 5000);
+            }
+        });
+        
+        const inputs = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.style.borderColor = '#4caf50';
+            });
+            
+            input.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    this.style.borderColor = '#c8e6c9';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Calendario</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calendar-container">
+        <div class="calendar-app">
+            <div class="app-header">
+                <h1>Calendario</h1>
+                </div>
+
+            <div class="calendar-navigation">
+                <button class="nav-btn prev-btn" id="prevMonthBtn">Anterior</button>
+                <div class="month-year-display">
+                    <span id="monthName">Enero</span>
+                    <span id="yearDisplay">2026</span>
+                </div>
+                <button class="nav-btn next-btn" id="nextMonthBtn">Siguiente</button>
+            </div>
+
+            <div class="calendar-main">
+                <div class="weekdays-header">
+                    <div class="weekday">Dom</div>
+                    <div class="weekday">Lun</div>
+                    <div class="weekday">Mar</div>
+                    <div class="weekday">Mie</div>
+                    <div class="weekday">Jue</div>
+                    <div class="weekday">Vie</div>
+                    <div class="weekday">Sab</div>
+                </div>
+                <div class="days-grid" id="daysGrid">
+                    
+                </div>
+            </div>
+
+            <div class="info-footer">
+                        <span class="legend-color today-color"></span>
+                        Dia actual
+                    </span>
+                    <span class="legend-item">
+                        <span class="legend-color normal-color"></span>
+                        Dias del mes
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

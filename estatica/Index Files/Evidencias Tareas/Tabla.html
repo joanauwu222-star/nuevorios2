@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabla</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #eef5ff 0%, #d4e3fd 100%);
+      font-family: 'Segoe UI', 'Inter', system-ui, 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+      margin: 0;
+    }
+
+   
+    .table-container {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(1px);
+      border-radius: 2rem;
+      padding: 1.5rem;
+      box-shadow: 0 20px 35px -12px rgba(0, 40, 60, 0.35);
+      width: 100%;
+      max-width: 1000px;
+      transition: all 0.2s ease;
+    }
+
+    
+    .aqua-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: #ffffff;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 55, 70, 0.2);
+      font-size: 1rem;
+    }
+
+   
+    .aqua-table thead tr {
+      background: linear-gradient(135deg, #0a4c5c 0%, #0e6b7c 100%);
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      font-weight: 600;
+    }
+
+    .aqua-table th {
+      padding: 1rem 1.2rem;
+      text-align: left;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-bottom: 2px solid #40b0c0;
+      position: relative;
+    }
+
+    
+    .aqua-table th:first-child {
+      border-top-left-radius: 1.5rem;
+    }
+
+    .aqua-table th:last-child {
+      border-top-right-radius: 1.5rem;
+    }
+
+    
+    .aqua-table td {
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid #cae3f0;
+      color: #0a2e38;
+      font-weight: 500;
+      background-color: #fefefe;
+      transition: background 0.2s ease;
+    }
+
+  
+    .aqua-table tr:hover td {
+      background-color: #dcf5fa;
+      transition: 0.2s;
+    }
+
+    .aqua-table tr:last-child td:first-child {
+      border-bottom-left-radius: 1.5rem;
+    }
+    .aqua-table tr:last-child td:last-child {
+      border-bottom-right-radius: 1.5rem;
+    }
+
+  
+    .aqua-table td:nth-child(3) {
+      font-weight: 700;
+      color: #0d6b7c;
+      background-color: #f0fafd;
+    }
+
+    .aqua-table td:last-child {
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      position: relative;
+    }
+
+   
+    .aqua-table th::after {
+      content: '';
+      position: absolute;
+      bottom: 8px;
+      left: 1.2rem;
+      width: 30px;
+      height: 2px;
+      background: #8cd9e8;
+      border-radius: 2px;
+      opacity: 0.7;
+    }
+
+
+    .aqua-table th {
+      text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    }
+
+
+    .aqua-table tbody tr:nth-child(even) td {
+      background-color: #f8fdfe;
+    }
+
+    .aqua-table tbody tr:nth-child(even):hover td {
+      background-color: #d1eef5;
+    }
+
+ 
+    .table-footer-note {
+      margin-top: 1.2rem;
+      text-align: right;
+      font-size: 0.75rem;
+      color: #0a6a7c;
+      font-weight: 500;
+      background: #e0f0f5a0;
+      padding: 0.5rem 1rem;
+      border-radius: 2rem;
+      display: inline-block;
+      width: auto;
+      backdrop-filter: blur(2px);
+    }
+
+    @media (max-width: 680px) {
+      .table-container {
+        padding: 0.8rem;
+      }
+      .aqua-table th, .aqua-table td {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.85rem;
+      }
+    }
+
+   
+    .aqua-table {
+      border: 1px solid #b7dfe8;
+    }
+  </style>
+</head>
+<body>
+
+<div class="table-container">
+  <table class="aqua-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>ID Depto.</th>
+        <th>Departamento</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>Ana</td>
+        <td>Noh Chi</td>
+        <td>1</td>
+        <td>Mercadotecnia</td>
+      </tr>
+      <tr>
+        <td>Elsa Pato</td>
+        <td>Chi Noh</td>
+        <td>2</td>
+        <td>Contaduria</td>
+      </tr>
+      <tr>
+        <td>Jose Maria</td>
+        <td>Tun Noh</td>
+        <td>3</td>
+        <td>Administración</td>
+      </tr>
+      <tr>
+        <td>Go Yohan</td>
+        <td>Lemus Virrey</td>
+        <td>4</td>
+        <td>Alimentos y Bebidas</td>
+      </tr>
+      <tr>
+        <td>Maria Erei</td>
+        <td>Zoila Cer</td>
+        <td>5</td>
+        <td>Informática</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="table-footer-note">
+  </div>
+</div>
+
+</body>
+</html>

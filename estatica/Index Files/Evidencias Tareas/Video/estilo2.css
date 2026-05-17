@@ -1,0 +1,27 @@
+body {
+    background: url("fondo2.jpg") no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+td a img {
+    width: 1000px;
+    height: 1000px;
+    border-radius: 0%;
+}
+
+td img {
+    width: 1000px;
+    height: 1000px;
+    border-radius: 0%;
+}
+
+table {
+    margin: auto;
+}
+
+table td {
+    padding: 40px;
+}

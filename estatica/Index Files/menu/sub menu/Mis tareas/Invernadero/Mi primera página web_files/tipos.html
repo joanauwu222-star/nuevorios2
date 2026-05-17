@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Plantas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1b5e20;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            border-left: 5px solid #4caf50;
+            border-right: 5px solid #4caf50;
+            display: inline-block;
+            width: auto;
+            padding: 0 30px;
+            letter-spacing: 2px;
+        }
+
+        .title-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #388e3c;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .plantas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .planta-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .planta-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .planta-imagen {
+            width: 100%;
+            height: 250px;
+            background: #dcedc8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .planta-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .planta-card:hover .planta-imagen img {
+            transform: scale(1.05);
+        }
+
+        .sin-imagen {
+            background: #c8e6c9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #2e7d32;
+            height: 100%;
+        }
+
+        .planta-info {
+            padding: 20px;
+        }
+
+        .planta-info h3 {
+            color: #1b5e20;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            border-left: 4px solid #4caf50;
+            padding-left: 12px;
+        }
+
+        .planta-descripcion {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .planta-caracteristicas {
+            background: #f1f8e9;
+            padding: 12px;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
+        .planta-caracteristicas h4 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .planta-caracteristicas ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .planta-caracteristicas li {
+            font-size: 0.85rem;
+            color: #666;
+            padding: 4px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .planta-caracteristicas li:before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            color: #4caf50;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .cuidados {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .cuidados span {
+            display: inline-block;
+            background: #e8f5e9;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #2e7d32;
+            margin-right: 8px;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .plantas-grid {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-container">
+            <h1>Tipos de Plantas</h1>
+        </div>
+        <div class="subtitle">
+            Conoce la riqueza del reino vegetal y cómo protegerlo
+        </div>
+
+        <div class="plantas-grid">
+            
+            <div class="planta-card">
+                <div class="planta-imagen">
+                    <img src="./imagenes/interiores.png" alt="Plantas de interior" onerror="this.parentElement.innerHTML='<div class=\'sin-imagen\'>Imagen no disponible</div>'">
+                </div>
+                <div class="planta-info">
+                    <h3>Plantas de Interior</h3>
+                    <p class="planta-descripcion">
+                        Perfectas para decorar tu hogar, purifican el aire y aportan vida a cualquier espacio. 
+                        Son ideales para personas que viven en apartamentos o espacios reducidos.
+                    </p>
+                    <div class="planta-caracteristicas">
+                        <h4>Caracteristicas:</h4>
+                        <ul>
+                            <li>Requieren luz indirecta</li>
+                            <li>Riego moderado (1-2 veces por semana)</li>
+                            <li>Purifican el aire interior</li>
+                            <li>Perfectas para principiantes</li>
+                        </ul>
+                    </div>
+                    <div class="cuidados">
+                        <span>Riego: Moderado</span>
+                        <span>Luz: Indirecta</span>
+                        <span>Temperatura: 18-24°C</span>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="planta-card">
+                <div class="planta-imagen">
+                    <img src="./imagenes/exterior.png" alt="Plantas de exterior" onerror="this.parentElement.innerHTML='<div class=\'sin-imagen\'>Imagen no disponible</div>'">
+                </div>
+                <div class="planta-info">
+                    <h3>Plantas de Exterior</h3>
+                    <p class="planta-descripcion">
+                        Resistentes al sol directo y a las inclemencias del tiempo. Ideales para jardines, 
+                        terrazas y balcones. Aportan color y vida a tus espacios exteriores.
+                    </p>
+                    <div class="planta-caracteristicas">
+                        <h4>Caracteristicas:</h4>
+                        <ul>
+                            <li>Resisten sol directo</li>
+                            <li>Riego frecuente en verano</li>
+                            <li>Soportan cambios de temperatura</li>
+                            <li>Atraen polinizadores</li>
+                        </ul>
+                    </div>
+                    <div class="cuidados">
+                        <span>Riego: Frecuente</span>
+                        <span>Luz: Directa</span>
+                        <span>Temperatura: Variable</span>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="planta-card">
+                <div class="planta-imagen">
+                    <img src="./imagenes/plantas con flor.png" alt="Plantas con flor" onerror="this.parentElement.innerHTML='<div class=\'sin-imagen\'>Imagen no disponible</div>'">
+                </div>
+                <div class="planta-info">
+                    <h3>Plantas con Flor</h3>
+                    <p class="planta-descripcion">
+                        Aportan color, alegría y fragancia a cualquier espacio. Florecen principalmente 
+                        en primavera y verano, creando ambientes llenos de vida y belleza.
+                    </p>
+                    <div class="planta-caracteristicas">
+                        <h4>Caracteristicas:</h4>
+                        <ul>
+                            <li>Flores coloridas y fragantes</li>
+                            <li>Atraen mariposas y abejas</li>
+                            <li>Florecen en temporadas específicas</li>
+                            <li>Necesitan fertilizante regular</li>
+                        </ul>
+                    </div>
+                    <div class="cuidados">
+                        <span>Riego: Regular</span>
+                        <span>Luz: Sol o semisombra</span>
+                        <span>Abono: Cada 15 días</span>
+                    </div>
+                </div>
+            </div>
+
+         
+            <div class="planta-card">
+                <div class="planta-imagen">
+                <img src="./imagenes/aromaticas.jpg" alt="Plantas aromáticas" onerror="this.parentElement.innerHTML='<div class=\'sin-imagen\'>Imagen no disponible</div>'">
+                </div>
+                <div class="planta-info">
+                    <h3>Plantas Aromaticas</h3>
+                    <p class="planta-descripcion">
+                        Perfectas para cocinar y aromatizar tu hogar. Menta, romero, albahaca, tomillo y 
+                        muchas mas. Son faciles de cultivar y muy utiles en la cocina.
+                    </p>
+                    <div class="planta-caracteristicas">
+                        <h4>Caracteristicas:</h4>
+                        <ul>
+                            <li>Ideales para cocina y te</li>
+                            <li>Repelen insectos naturalmente</li>
+                            <li>Crecen rapido y facil</li>
+                            <li>Aroma agradable todo el año</li>
+                        </ul>
+                    </div>
+                    <div class="cuidados">
+                        <span>Riego: Moderado</span>
+                        <span>Luz: Sol directo</span>
+                        <span>Poda: Constante</span>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="planta-card">
+                <div class="planta-imagen">
+                    <img src="./imagenes/suculentas.jpg" alt="Plantas suculentas" onerror="this.parentElement.innerHTML='<div class=\'sin-imagen\'>Imagen no disponible</div>'">
+                </div>
+                <div class="planta-info">
+                    <h3>Plantas Suculentas</h3>
+                    <p class="planta-descripcion">
+                        Ideales para personas con poco tiempo, almacenan agua en sus hojas y requieren cuidados minimos. 
+                        Existen en una gran variedad de formas, colores y tamaños.
+                    </p>
+                    <div class="planta-caracteristicas">
+                        <h4>Caracteristicas:</h4>
+                        <ul>
+                            <li>Almacenan agua en sus hojas</li>
+                            <li>Requieren riego escaso</li>
+                            <li>Resisten altas temperaturas</li>
+                            <li>Perfectas para principiantes</li>
+                        </ul>
+                    </div>
+                    <div class="cuidados">
+                        <span>Riego: Escaso</span>
+                        <span>Luz: Sol indirecto</span>
+                        <span>Temperatura: 15-30°C</span>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="planta-card">
+                <div class="planta-imagen">
+                    <img src="./imagenes/trepadoras.png" alt="Plantas trepadoras" onerror="this.parentElement.innerHTML='<div class=\'sin-imagen\'>Imagen no disponible</div>'">
+                </div>
+                <div class="planta-info">
+                    <h3>Plantas Trepadoras</h3>
+                    <p class="planta-descripcion">
+                        Perfectas para cubrir muros, cercas y pergolas. Aportan verticalidad y frescura a jardines 
+                        y espacios exteriores, creando ambientes mas verdes y naturales.
+                    </p>
+                    <div class="planta-caracteristicas">
+                        <h4>Caracteristicas:</h4>
+                        <ul>
+                            <li>Necesitan estructuras para trepar</li>
+                            <li>Crecen rapidamente</li>
+                            <li>Proporcionan sombra natural</li>
+                            <li>Ideales para cubrir muros</li>
+                        </ul>
+                    </div>
+                    <div class="cuidados">
+                        <span>Riego: Regular</span>
+                        <span>Luz: Sol o semisombra</span>
+                        <span>Soporte: Necesario</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 50px; padding: 25px; background: #f1f8e9; border-radius: 20px; text-align: center;">
+            <h3 style="color: #1b5e20; margin-bottom: 15px;">Consejo del dia</h3>
+            <p style="color: #555; line-height: 1.6;">
+                Cada planta es unica y tiene necesidades especificas. Observa tus plantas diariamente para 
+                identificar si necesitan agua, luz o nutrientes. El amor y la dedicacion son la clave para 
+                un jardin saludable.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
